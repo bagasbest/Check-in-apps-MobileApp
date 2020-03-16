@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    android:background="@drawable/grad_bg"
+    android:animateLayoutChanges="true">
+
+
+       <RelativeLayout
+           android:id="@+id/asp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:layout_marginLeft="40dp"
+           android:layout_marginRight="40dp"
+           >
+
+               <ImageView
+                   android:id="@+id/logo"
+                   android:layout_width="150dp"
+                   android:layout_height="150dp"
+                   android:src="@drawable/logo"
+                   android:contentDescription="@string/contextDescription"
+
+                   />
+
+               <RelativeLayout
+                       android:id="@+id/rellay1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/logo"
+                   android:visibility="gone">
+               <TextView
+                   android:id="@+id/tv_spTxt"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="40dp"
+                   android:text="@string/splash_text"
+                   android:textSize="30sp"
+                   android:textColor="@android:color/white"
+                   android:textStyle="bold"
+                   android:layout_marginStart="40dp" />
+               </RelativeLayout>
+
+
+       </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rellay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/asp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            >
+
+                <Button
+                        android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lanjut"
+                    android:drawableLeft="@drawable/ic_chevron_right_black_24dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_light"
+                    android:drawableStart="@drawable/ic_chevron_right_black_24dp" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

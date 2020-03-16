@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Check-in Hotel or Inn</string>
+    <string name="contextDescription">img</string>
+    <string name="splash_text">Temukan Penginapan Favoritmu</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="nama_saya">Bagas Pangestu</string>
+    <string name="email_saya">bagasbest80@gmail.com</string>
+    <string name="nama_hotel">Nama Hotel</string>
+    <string name="detail">detail</string>
+    <string name="ic_person">ic_person</string>
+</resources>
