@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail"
-            android:maxLines="4"
+            android:maxLines="2"
             android:ellipsize="end" />
     </LinearLayout>
 </RelativeLayout>

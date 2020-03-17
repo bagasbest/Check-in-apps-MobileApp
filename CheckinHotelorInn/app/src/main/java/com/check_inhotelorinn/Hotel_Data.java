@@ -3,7 +3,8 @@ package com.check_inhotelorinn;
 import java.util.ArrayList;
 
 public class Hotel_Data {
-    private static String[] daftarnamahotel = {
+    public static String[] daftarnamahotel = {
+
             "Permata Sari Hotel's",
             "Jati Agung Motel",
             "Penginapan Merih Asri",

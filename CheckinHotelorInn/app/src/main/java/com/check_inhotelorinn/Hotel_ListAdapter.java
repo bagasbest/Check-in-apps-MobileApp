@@ -18,6 +18,8 @@ import java.util.ArrayList;
 public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.ListViewHolder> {
     private ArrayList<Hotel_Constructor> HotelList;
 
+
+
     public Hotel_ListAdapter (ArrayList<Hotel_Constructor> list){
         this.HotelList = list;
     }
@@ -30,7 +32,7 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Hotel_ListAdapter.ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final Hotel_ListAdapter.ListViewHolder holder, final int position) {
         Hotel_Constructor hc = HotelList.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(hc.getFoto())
@@ -38,6 +40,13 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
                 .into(holder.gambar);
         holder.tvNama.setText(hc.getNama());
         holder.tvDetail.setText(hc.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(HotelList.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 
@@ -56,5 +65,15 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
             tvNama = itemView.findViewById(R.id.tv_name);
             tvDetail = itemView.findViewById(R.id.tv_detail);
         }
+    }
+
+    private OnItemClickCallback onItemClickCallback;
+
+    public void SetOnItemClickCallback (OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
+    public interface OnItemClickCallback{
+        void onItemClicked(Hotel_Constructor hc);
     }
 }

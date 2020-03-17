@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,25 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         Hotel_ListAdapter hc = new Hotel_ListAdapter(list);
         rv.setAdapter(hc);
+
+        hc.SetOnItemClickCallback(new Hotel_ListAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Hotel_Constructor hc) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra(DetailActivity.EXTRA_FOTO, hc.getFoto());
+                i.putExtra(DetailActivity.EXTRA_NAME, hc.getNama());
+                i.putExtra(DetailActivity.EXTRA_DETAIL, hc.getDetail());
+
+                startActivity(i);
+
+            }
+        });
+    }
+
+    private void showSelectedHotel (Hotel_Constructor hc){
+
+        Toast.makeText(this, "Kamu Memilih " + hc.getNama(), Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -49,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         setMode(item.getItemId());
         return super.onOptionsItemSelected(item);
     }
+
+
 
     private void setMode(int itemId) {
         switch (itemId) {
