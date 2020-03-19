@@ -21,18 +21,21 @@ import com.bumptech.glide.request.RequestOptions;
 public class DetailActivity extends AppCompatActivity {
 
     ImageView img;
-    TextView tv_name, tv_detail;
+    TextView tv_name, tv_detail, tv_harga;
 
     Button btPesan, btWhislist, btChat;
 
     public static final String EXTRA_NAME = "extra_name";
     public static final String EXTRA_DETAIL = "extra_detail";
     public static final String EXTRA_FOTO = "extra_foto";
+    public  static  final String EXTRA_HARGA = "extra_harga";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final String name = getIntent().getStringExtra(EXTRA_NAME);
         String detail = getIntent().getStringExtra(EXTRA_DETAIL);
+        String harga = getIntent().getStringExtra(EXTRA_HARGA);
 
         setContentView(R.layout.activity_detail);
 
@@ -43,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
          img = findViewById(R.id.img_item_foto);
         tv_name = findViewById(R.id.tv_hotelName);
         tv_detail = findViewById(R.id.tv_hotelDetail);
+        tv_harga = findViewById(R.id.tv_hargaHotel);
 
         btChat = findViewById(R.id.bt_chat);
         btPesan = findViewById(R.id.bt_pesan);
@@ -54,6 +58,7 @@ public class DetailActivity extends AppCompatActivity {
                 .into(img);
         tv_name.setText(name);
         tv_detail.setText(detail);
+        tv_harga.setText(harga);
 
         btPesan.setOnClickListener(new View.OnClickListener() {
             @Override

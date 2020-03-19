@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(DetailActivity.EXTRA_FOTO, hc.getFoto());
                 i.putExtra(DetailActivity.EXTRA_NAME, hc.getNama());
                 i.putExtra(DetailActivity.EXTRA_DETAIL, hc.getDetail());
+                i.putExtra(DetailActivity.EXTRA_HARGA, hc.getHarga());
 
                 startActivity(i);
 

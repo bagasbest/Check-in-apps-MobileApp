@@ -1,7 +1,7 @@
 package com.check_inhotelorinn;
 
 public class Hotel_Constructor {
-    private String nama, detail;
+    private String nama, detail, harga;
     private int foto;
 
 
@@ -19,6 +19,14 @@ public class Hotel_Constructor {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public String getHarga(){
+        return harga;
+    }
+
+    public void setHarga(String harga){
+        this.harga = harga;
     }
 
     public int getFoto() {

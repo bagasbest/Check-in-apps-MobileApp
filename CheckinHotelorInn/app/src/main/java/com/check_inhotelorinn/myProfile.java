@@ -20,14 +20,4 @@ public class myProfile extends AppCompatActivity {
         a.setTitle("Profil Saya");
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.item_person, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-
-
 }

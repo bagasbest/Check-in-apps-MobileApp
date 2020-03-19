@@ -40,6 +40,7 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
                 .into(holder.gambar);
         holder.tvNama.setText(hc.getNama());
         holder.tvDetail.setText(hc.getDetail());
+        holder.tvHarga.setText(hc.getHarga());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +57,7 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
     }
 
     class ListViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNama, tvDetail;
+        TextView tvNama, tvDetail, tvHarga;
         ImageView gambar;
 
         ListViewHolder(@NonNull View itemView) {
@@ -64,6 +65,7 @@ public class Hotel_ListAdapter extends RecyclerView.Adapter<Hotel_ListAdapter.Li
             gambar = itemView.findViewById(R.id.img_item_photo);
             tvNama = itemView.findViewById(R.id.tv_name);
             tvDetail = itemView.findViewById(R.id.tv_detail);
+            tvHarga = itemView.findViewById(R.id.tv_harga);
         }
     }
 
