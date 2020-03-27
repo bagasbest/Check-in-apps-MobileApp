@@ -70,7 +70,8 @@ public class DetailActivity extends AppCompatActivity {
         btChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Menghubungkan Pemilik " + name, Toast.LENGTH_SHORT).show();
+                 Intent i = new Intent(DetailActivity.this, Custom_View.class);
+                 startActivity(i);
             }
         });
 
